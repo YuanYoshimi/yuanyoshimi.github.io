@@ -1,4 +1,3 @@
-import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
 import localFont from 'next/font/local';
 import "./globals.css";
@@ -14,12 +13,12 @@ const vercettiFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Mohit Virli ✌️",
-  description: "A frontend developer by profession, a creative at heart.",
-  keywords: "Mohit Virli, Frontend Engineer, React Developer, Three.js, Creative Developer, Web Development, Angular, JavaScript, TypeScript, Portfolio",
-  authors: [{ name: "Mohit Virli" }],
-  creator: "Mohit Virli",
-  publisher: "Mohit Virli",
+  title: "Yuan Yoshimi ✌️",
+  description: "A Computer Science student at UC Irvine specializing in Architecture & Embedded Systems.",
+  keywords: "Yuan Yoshimi, Computer Science, UC Irvine, Embedded Systems, Software Engineer, React, Python, C++, Robotics, Portfolio",
+  authors: [{ name: "Yuan Yoshimi" }],
+  creator: "Yuan Yoshimi",
+  publisher: "Yuan Yoshimi",
   formatDetection: {
     email: false,
     address: false,
@@ -36,20 +35,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Mohit Virli - Frontend Engineer",
-    description: "Frontend engineer by profession, creative at heart.",
-    url: "https://mohitvirli.github.io",
-    siteName: "Mohit Virli's Portfolio",
+    title: "Yuan Yoshimi - CS Student & Software Engineer",
+    description: "A Computer Science student at UC Irvine specializing in Architecture & Embedded Systems.",
+    url: "https://yuanyoshimi.github.io",
+    siteName: "Yuan Yoshimi's Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohit Virli - Frontend Engineer",
-    description: "Frontend engineer by profession, creative at heart.",
-  },
-  verification: {
-    google: "GsRYY-ivL0F_VKkfs5KAeToliqz0gCrRAJKKmFkAxBA",
+    title: "Yuan Yoshimi - CS Student & Software Engineer",
+    description: "A Computer Science student at UC Irvine specializing in Architecture & Embedded Systems.",
   },
 };
 
@@ -72,7 +68,7 @@ export default function RootLayout({
       >
         {children}
       </body>
-      <GoogleAnalytics gaId={'G-7WD4HM3XRE'}/>
+      {/* Add your Google Analytics ID here if you have one */}
     </html>
   );
 }

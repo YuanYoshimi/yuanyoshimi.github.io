@@ -23,7 +23,7 @@ const Hero = () => {
         // delay: 1.5,
       }, {
         y: 0,
-        duration: 3
+        duration: 1.4
       });
     }
   }, [progress]);
@@ -35,7 +35,7 @@ const Hero = () => {
 
   return (
     <>
-      <Text position={[0, 2, -10]} {...fontProps} ref={titleRef}>Hi, I am Mohit Virli.</Text>
+      <Text position={[0, 2, -10]} {...fontProps} ref={titleRef}>Hi, I am Yuan Yoshimi.</Text>
       <StarsContainer />
       <CloudContainer/>
       <group position={[0, -25, 5.69]}>

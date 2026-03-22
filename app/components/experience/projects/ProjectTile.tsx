@@ -8,6 +8,7 @@ import * as THREE from "three";
 import { usePortalStore } from "@stores";
 import { Project } from "@types";
 
+
 interface ProjectTileProps {
   project: Project;
   index: number;
@@ -22,6 +23,7 @@ const ProjectTile = ({ project, index, position, rotation, activeId, onClick }: 
   const hoverAnimRef = useRef<gsap.core.Timeline | null>(null);
   const [hovered, setHovered] = useState(false);
   const isProjectSectionActive = usePortalStore((state) => state.activePortalId === "projects");
+  const setSelectedProject = usePortalStore((state) => state.setSelectedProject);
 
   const titleProps = useMemo(() => ({
     font: "./soria-font.ttf",
@@ -84,18 +86,27 @@ const ProjectTile = ({ project, index, position, rotation, activeId, onClick }: 
 
   const handleClick = (e: ThreeEvent<MouseEvent>) => {
     e.stopPropagation();
-    if (!project.url) return;
     const button = e.eventObject;
     gsap.to(button.position, { z: 0, duration: 0.1 })
       .then(() => gsap.to(button.position, { z: 0.3, duration: 0.3 }));
-    setTimeout(() => window.open(project.url, '_blank'), 50);
+    setTimeout(() => setSelectedProject(project), 50);
+  };
+
+  const handleTileClick = (e: ThreeEvent<MouseEvent>) => {
+    e.stopPropagation();
+    if (!isProjectSectionActive) return;
+    if (isMobile) {
+      onClick();
+    } else {
+      setSelectedProject(project);
+    }
   };
 
   return (
     <group
       position={position}
       rotation={rotation}
-      onClick={onClick}
+      onClick={handleTileClick}
       onPointerOver={() => !isMobile && isProjectSectionActive && setHovered(true)}
       onPointerOut={() => !isMobile && isProjectSectionActive && setHovered(false)}>
       <group ref={projectRef}>
