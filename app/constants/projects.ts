@@ -34,7 +34,6 @@ export const PROJECTS: Project[] = [
     date: 'Mar 2026',
     subtext: 'Helping Japanese dental companies gain visibility in AI-generated answers.',
     longDescription: 'Developing a software that helps Japanese dental companies gain visibility in AI-generated answers.',
-    url: 'https://kensaku-iuletk8yh-yuanyoshimis-projects.vercel.app/',
   },
   {
     title: 'Portfolio',
