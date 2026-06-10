@@ -26,7 +26,7 @@ export const WORK_TIMELINE: WorkTimelinePoint[] = [
   {
     point: new THREE.Vector3(0, -1, -10),
     year: '2026',
-    title: 'Anteater Formula Racing',
+    title: 'AFR FSAE',
     subtitle: 'Vehicle Dynamics Engineer',
     position: 'left',
   },
